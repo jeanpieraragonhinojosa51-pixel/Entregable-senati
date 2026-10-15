@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENATI - Instituto Técnico Superior</title>
+    
+    <!-- Framework CSS Externo: Bootstrap 5 -->
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    
+    <!-- Estilos CSS Internos para personalización de Grid, Flexbox e Identidad Visual SENATI -->
+    <style>
+        :root {
+            --primary-color: #003366; /* Azul SENATI */
+            --accent-color: #ff6600; /* Naranja SENATI */
+            --dark-color: #1e293b;
+            --light-bg: #f8fafc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--dark-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        /* REQUERIMIENTO GRID CSS - Distribución Automática de la Oferta Académica */
+        .carreras-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem 0;
+        }
+
+        /* REQUERIMIENTO FLEXBOX CSS - Alineación Simétrica dentro de las Tarjetas */
+        .card-flex {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-flex:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero Section del Entregable */
+        .hero-section {
+            background: linear-gradient(135deg, #002244 0%, #004488 100%);
+            color: white;
+            padding: 5rem 0;
+            margin-bottom: 2rem;
+        }
+
+        /* Botón con Identidad Visual SENATI */
+        .btn-senati {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-senati:hover {
+            background-color: #e65500;
+            color: white;
+        }
+
+        /* Eliminación de puntos o viñetas en listas de navegación */
+        ul.nav-clean {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        ul.nav-clean a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        ul.nav-clean a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado / Navegación (Elementos en Línea y Bloque combinados) -->
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <!-- CORRECCIÓN: Se cambió "SENATI ENTEGABLE" por "SENATI" -->
+            <span class="navbar-brand mb-0 h1 fw-bold text-white">SENATI</span>
+            <ul class="nav-clean">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#carreras">Carreras</a></li>
+                <li><a href="#admision">Postular Aquí</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Sección Principal / Hero (Elemento de Bloque) -->
+    <header id="inicio" class="hero-section text-center text-md-start">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="display-4 fw-bold mb-3">Transforma tu futuro con educación técnica de primer nivel</h1>
+                    <p class="lead mb-4">Carreras de alta demanda laboral con infraestructura moderna, docentes expertos y certificación oficial inmediata.</p>
+                    <p class="fw-bold">Admisión Abierta 2026</p>
+                    <a href="#admision" class="btn btn-senati btn-lg shadow-sm mt-2">Iniciar Inscripción</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sección de Carreras (Grid e Identidad Visual) -->
+    <main class="container my-5" id="carreras">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold position-relative d-inline-block">Nuestras Carreras Técnicas</h2>
+            <p class="text-muted">Programas diseñados para responder a las exigencias del mercado global.</p>
+        </div>
+
+        <!-- Contenedor Grid Requerido -->
+        <div class="carreras-grid">
+            
+            <!-- Tarjeta 1 (Flexbox) -->
+            <div class="card card-flex border-0 shadow-sm p-4 bg-white rounded">
+                <div>
+                    <span class="badge bg-primary mb-3">Tecnología</span>
+                    <h3 class="h5 fw-bold mb-3">Desarrollo de Sistemas</h3>
+                    <p class="text-muted small">Aprende a programar, diseñar bases de datos y crear aplicaciones web o móviles con las últimas tecnologías.</p>
+                </div>
+                <div class="mt-4">
+                    <a href="#" class="text-primary fw-bold text-decoration-none small">Ver Plan de Estudios &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2 (Flexbox) -->
+            <div class="card card-flex border-0 shadow-sm p-4 bg-white rounded">
+                <div>
+                    <span class="badge bg-primary mb-3">Tecnología</span>
+                    <h3 class="h5 fw-bold mb-3">Ingeniería de Software e IA</h3>
+                    <p class="text-muted small">Especialízate en la creación de soluciones inteligentes, automatización y arquitecturas de software modernas.</p>
+                </div>
+                <div class="mt-4">
+                    <a href="#" class="text-primary fw-bold text-decoration-none small">Ver Plan de Estudios &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3 (Flexbox) -->
+            <div class="card card-flex border-0 shadow-sm p-4 bg-white rounded">
+                <div>
+                    <span class="badge bg-warning text-dark mb-3">Ingeniería</span>
+                    <h3 class="h5 fw-bold mb-3">Electricidad Industrial</h3>
+                    <p class="text-muted small">Domina el control de tableros eléctricos, automatización industrial, y mantenimiento de sistemas de potencia.</p>
+                </div>
+                <div class="mt-4">
+                    <a href="#" class="text-primary fw-bold text-decoration-none small">Ver Plan de Estudios &rarr;</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Pie de Página (Elemento de Bloque) -->
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-1 small">&copy; 2026 SENATI - Todos los derechos reservados.</p>
+            <p class="text-muted em small">Diseñado para el informe escolar de HTML del Segundo Semestre.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JavaScript Bundle con Popper -->
+    <script src="https://jsdelivr.net"></script>
+</body>
+</html>
